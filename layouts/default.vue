@@ -1,11 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      v-model="sideDrawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      app
-    >
+    <v-navigation-drawer v-model="sideDrawer" :mini-variant="miniVariant" app>
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -23,12 +18,11 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <!-- <v-app-bar :clipped-left="clipped" fixed app>
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
       </v-btn>
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
-    </v-app-bar>
+    </v-app-bar> -->
     <v-main>
       <v-container>
         <Nuxt />
@@ -82,8 +76,6 @@ export default {
         },
       ],
       miniVariant: false,
-      right: true,
-      title: "Cashier-Ku",
     };
   },
 };
